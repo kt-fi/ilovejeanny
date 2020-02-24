@@ -1,14 +1,18 @@
 {
-  "name": "starter",
+  "name": "vegan-page",
   "version": "1.0.0",
-  "description": "",
+  "description": "Website for Vegan Restauraunt",
   "main": "index.js",
   "scripts": {
-    "compile:sass":"node-sass sass/main.scss css/style.css -w"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/main.scss css/styles.css -w"
   },
-  "author": "",
+  "author": "Christopher Hillman",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
   }
 }
