@@ -276,8 +276,7 @@ i {
   body {
     margin: 0; }
   .main {
-    border-top: 0;
-    margin-bottom: -2rem; }
+    border-top: 0; }
   .headerBox {
     text-align: center;
     padding: 5rem 0; }
@@ -341,17 +340,26 @@ i {
     border-bottom: 2px solid #005a05; }
     .areaText--p {
       padding-top: 1rem; }
+  .barImage {
+    width: 100%;
+    padding-right: 0; }
   .contact_form {
     color: white;
     padding: 1rem;
     margin: 0;
     background-color: rgba(0, 0, 0, 0.308); }
+  .btn {
+    margin-bottom: 2rem; }
   iframe {
-    padding: 2rem 0 0 0;
+    padding: 0 0 0 0;
     width: 100%; }
   .split_line {
     border-left: 0;
-    margin: 0; }
+    margin: 0;
+    text-align: center; }
+  .address {
+    margin: 0;
+    padding: 1rem 0 0 0; }
   footer {
     background-color: rgba(43, 43, 43, 0.87);
     color: white;
