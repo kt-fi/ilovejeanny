@@ -299,7 +299,7 @@ i {
     animation-name: headerAnimP;
     animation-duration: 4s; }
   .center {
-    text-align: right;
+    text-align: center;
     margin-bottom: -28rem; }
   .image_circle {
     border-radius: 1000px;
