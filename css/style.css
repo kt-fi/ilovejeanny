@@ -228,8 +228,10 @@ body {
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
-  height: 50rem;
-  position: relative; }
+  height: 100vh;
+  width: 90vw;
+  position: relative;
+  overflow: hidden; }
   .card_side {
     height: 50rem;
     transition: all .8s ease;
@@ -252,6 +254,54 @@ body {
     transform: rotateY(180deg); }
   .card:hover .card_side--back {
     transform: rotateY(0); }
+  .card_picture {
+    background-blend-mode: screen;
+    background-size: cover;
+    height: 23rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card_picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(https://miro.medium.com/max/5400/1*VcHVCyRSAOF3V6Ldi0iXOQ.jpeg); }
+  .card_heading {
+    position: absolute;
+    text-align: right;
+    top: 12rem;
+    right: 2rem;
+    text-transform: uppercase;
+    width: 75%;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #fff; }
+  .card_heading--span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone; }
+    .card_heading--span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .card_detail ul {
+    list-style: none;
+    margin: 0 auto;
+    width: 80%; }
+    .card_detail ul li {
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.5rem; }
+      .card_detail ul li:not(:last-child) {
+        border-bottom: 1px solid #eee; }
+  .card_cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; }
+    .card_cta_price--only {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 300; }
+    .card_cta_price--value {
+      text-align: center;
+      font-size: 5rem;
+      font-weight: 200;
+      margin-bottom: 2rem; }
 
 .header {
   height: 95vh;
