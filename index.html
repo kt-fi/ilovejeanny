@@ -1,110 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-        <link rel="stylesheet" href="css/iconfont.css">
-        <link rel="stylesheet" href="css/icon-font.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
 
-        <title>I LOVE YOU BABY</title>
-    </head>
-    <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<body>
+    
+<header class="header">
+<img class="header__logo--small" src="img/logo-sm.png" alt="">
+    <ul class="header__links">
+        <li class="header__links--link"> Home</div> </li>
+        <li class="header__links--link">About Us</div></li>
+        <li class="header__links--link">Portfolio</div></li>
+        <li class="header__links--link">Contact</div></li>
+    </ul>
 
-
-
-
-
-                <div class="row">
-                    <div class="col-1-of-3">
-                        <div class="card">
-                            <div class="card_side card_side--front card_side--front--1">
-                                <div class="card_picture card_picture--1">
-                                    &nbsp;
-                                </div>
-                                <h4 class="card_heading">
-                                  <span class="card_heading--span card_heading--span--1">Jeanny Gongora</span>
-                                </h4>
-                                <div class="card_detail">
-                                   <ul>
-                                       <li><h1>GOOD MORNING</h1></li>
-                                       <li>YOU ARE BEAUTIFUL</li>
-                                       <li>I HOPE YOU HAVE A LOVELY DAY</li>
-                                       <li></li>
-                                       <li>HAZ CLICK AQUI</li>
-                                   </ul>
-                                </div>
-
-                            </div>
-                            <div class="card_side card_side--back card_side--back--1">
-
-                                <div class="card_cta">
-                                    <div class="card_cta_price--box">
-                                        <p class="card_cta_price--only">
-                                          I
-                                        </p>
-                                        <p class="card_cta_price--value">
-                                            LOVE YOU
-                                        </p>
-                                      <img src="data:image/png;base64,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" />
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-        </main>
+    <div class="header__quote">
+        <h2 class="header__quote--text"> <span class="one">Dont look</span> <span class="two"> back.... </span> </br> <span class="three">You're not</span>
+            <span class="four">going that </span>  <span class="five">way!!</span></h2>
+    </div>
 
 
-
-<!--
-
-        <section class="grid-test">
-            <div class="row">
-                <div class="col-1-of-2">Col 1 of 2</div>
-                <div class="col-1-of-2">col 1 of 2</div>
-            </div>
-
-            <div class="row">
-                <div class="col-1-of-3">Col 1 of 3</div>
-                <div class="col-1-of-3">col 1 of 3</div>
-                <div class="col-1-of-3">col 1 of 3</div>
-            </div>
-
-            <div class="row">
-                <div class="col-1-of-3">Col 1 of 3</div>
-                <div class="col-2-of-3">col 2 of 3</div>
-            </div>
-
-            <div class="row">
-                <div class="col-1-of-4">Col 1 of 4</div>
-                <div class="col-1-of-4">Col 1 of 4</div>
-                <div class="col-1-of-4">Col 1 of 4</div>
-                <div class="col-1-of-4">Col 1 of 4</div>
-            </div>
-
-            <div class="row">
-                <div class="col-1-of-4">Col 1 of 4</div>
-                <div class="col-1-of-4">Col 1 of 4</div>
-                <div class="col-2-of-4">Col 2 of 4</div>
-            </div>
-
-            <div class="row">
-                <div class="col-1-of-4">Col 1 of 4</div>
-                <div class="col-3-of-4">Col 3 of 4</div>
-            </div>
+<img src="img/header-logo.png" alt="" class="header__logo--big">
+</header>
 
 
-
-
-        </section> -->
-
-
-    </body>
+    <script src="js/index.js"></script>
+</body>
 </html>
