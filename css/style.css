@@ -29,7 +29,9 @@ body {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 20%; }
+  grid-template-rows: 20%;
+  justify-content: center;
+  overflow: hidden; }
   .header__logo--small {
     grid-column: 1 /2;
     align-self: center;
@@ -55,7 +57,14 @@ body {
         width: 80%; } }
     @media only screen and (max-width: 705px) {
       .header__logo--big {
-        visibility: hidden; } }
+        grid-row: 3/4;
+        grid-column: 1 / -1;
+        align-self: center;
+        justify-content: center;
+        justify-self: center;
+        opacity: 0.2; }
+        .header__logo--big:hover {
+          transform: scale(1); } }
   .header__links {
     grid-column: 2 / -1;
     display: flex;
@@ -95,6 +104,14 @@ body {
         .header__quote--text {
           font-size: 4rem;
           width: 100%; } }
+      @media only screen and (max-width: 400px) {
+        .header__quote--text {
+          padding: 4rem 1rem;
+          font-size: 3rem; } }
+    @media only screen and (max-width: 400px) {
+      .header__quote {
+        margin-left: 0;
+        margin-right: 0; } }
 
 .one {
   animation-fill-mode: forwards;
