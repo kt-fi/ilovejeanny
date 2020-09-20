@@ -23,7 +23,7 @@ body {
     justify-content: space-between;
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .header{
         width: 80%; 
         margin: 10px auto;
@@ -72,7 +72,7 @@ body {
     margin-top: 120px;
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .gameArea {
         width: 50%;
         height: 50%;
@@ -109,7 +109,7 @@ body {
     z-index: 1;
     box-shadow: 0px 4px 0px hsl(230, 56%, 40%);
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .paper {
         transform: translate(-25%, -40%);
         height: 60%;
@@ -150,7 +150,7 @@ body {
 
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .scissors {
         transform: translate(20%, -40%);
         height: 60%;
@@ -190,7 +190,7 @@ body {
     box-shadow: 0px 4px 0px hsl(349, 84%, 33%);
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .rock {
   
         height: 60%;
@@ -239,7 +239,7 @@ a {
     color: black;
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .gameBox{
        width:100%;
     }
@@ -260,7 +260,7 @@ a {
 
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .playerResult{
         transform: translate(20%,-65%);
     }
@@ -279,7 +279,7 @@ a {
     z-index: 1;
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .compResult{
         transform: translate(-20%,-65%);
     }
@@ -302,7 +302,7 @@ a {
     box-shadow: 0px 4px 0px hsl(349, 84%, 33%);
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width:500px){
     .rockRes{
         height: 150px;
         width: 150px;
@@ -341,7 +341,7 @@ a {
     box-shadow: 0px 4px 0px hsl(230, 56%, 40%);
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .paperRes{
         height: 150px;
         width: 150px;
@@ -379,7 +379,7 @@ a {
 
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .scissorsRes{
         height: 150px;
         width: 150px;
@@ -408,7 +408,7 @@ a {
     transform: translateY(-25%);
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .winner {
         transform: translateY(45%);
     }
@@ -428,7 +428,7 @@ a {
     text-transform: uppercase;
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .playAgain {
         transform: translate(75%, -550%);
         width: 100%;
