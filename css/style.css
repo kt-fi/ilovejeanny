@@ -1,176 +1,438 @@
-* {
-  padding: 0;
-  margin: 0; }
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit; }
-
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-  overflow-y: scroll; }
-
+html, body {margin: 0; ; overflow: hidden}
 body {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 700px, 200px;
-  overflow: hidden;
-  overflow-x: hidden;
-  margin: 0 auto;
-  max-width: 1350px; }
+
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    display: flex;
+    flex-flow: column;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+}
 
 .header {
-  background-image: linear-gradient(to bottom, white 4%, rgba(255, 255, 255, 0.589)), url(https://www.e-architect.co.uk/wp-content/uploads/2015/11/madrid-rio-landscape-design-m201115-2.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  height: 700px;
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 20%;
-  justify-content: center;
-  overflow: hidden; }
-  @media only screen and (max-height: 390px) {
-    .header {
-      height: 500px; } }
-  .header__logo--small {
-    grid-column: 1 /2;
-    align-self: center;
-    padding-left: 4rem;
-    transform: translateX(-15rem);
-    opacity: 0;
-    animation-name: logoSmallIn;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards; }
-  .header__logo--big {
-    justify-self: center;
-    align-self: center;
-    animation-name: logoIn;
-    animation-duration: 4s;
-    animation-delay: 1s;
-    opacity: 0;
-    animation-fill-mode: forwards;
-    transition: all 0.5s;
-    width: 100%; }
-    .header__logo--big:hover {
-      transform: scale(1.1); }
-    @media only screen and (max-width: 705px) {
-      .header__logo--big {
-        grid-row: 3/4;
-        grid-column: 1 / -1;
-        align-self: center;
-        justify-content: center;
-        justify-self: center;
-        opacity: 0.2; }
-        .header__logo--big:hover {
-          transform: scale(1); } }
-  .header__links {
-    grid-column: 2 / -1;
     display: flex;
-    justify-content: space-evenly;
+    margin: 30px auto;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 400px){
+    .header{
+        width: 80%; 
+        margin: 10px auto;
+    }
+   
+}
+
+.scoreBox {
+    text-align: center;
+
+    padding-bottom: 0px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 10px;
+    width: 120px;
+    display: flex;
+    flex-flow: column;
+}
+
+
+
+.scoreText {
+    color: hsl(229, 64%, 46%);
+    font-weight: 700;
+    margin-bottom: 0 !important;
+}
+
+.scoreNumber {
+    font-size: 3rem;
+    
+    color: hsl(229, 25%, 31%);
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+
+.gameArea {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    width: 350px;
+    height: 240px;
+    justify-content: center;
+    margin: auto;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+@media screen and (max-width: 400px){
+    .gameArea {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+.bgTri {
+    grid-column: 1 / -1;
+    grid-row: 1/2;
+    z-index: -1;
+    justify-self: center;
+}
+
+
+
+.icon {
     align-self: center;
-    list-style-type: none;
-    font-size: 1.2rem;
-    font-family: "Raleway", sans-serif; }
-    @media only screen and (max-width: 705px) {
-      .header__links {
-        visibility: hidden; } }
-    .header__links--link {
-      padding: 1rem;
-      border-left: 3px solid transparent;
-      transition: all .5s; }
-      .header__links--link:hover {
-        border-left: 3px solid red;
-        transform: scale(1.1);
-        cursor: pointer;
-        font-weight: 700; }
-  .header__quote {
-    margin-left: 10%;
-    margin-right: 10%;
-    align-self: center; }
-    @media only screen and (max-width: 705px) {
-      .header__quote {
-        grid-column: 1 / -1;
-        text-align: center; } }
-    .header__quote--text {
-      grid-column: 1 / 2;
-      font-family: "Merriweather", serif;
-      font-size: 5rem;
-      background-color: rgba(230, 230, 230, 0.438);
-      color: #363636;
-      padding: 4rem;
-      width: 90%; }
-      @media only screen and (max-width: 1160px) {
-        .header__quote--text {
-          font-size: 4rem;
-          width: 100%; } }
-      @media only screen and (max-width: 400px) {
-        .header__quote--text {
-          padding: 4rem 1rem;
-          font-size: 3rem; } }
-    @media only screen and (max-width: 400px) {
-      .header__quote {
-        margin-left: 0;
-        margin-right: 0; } }
+}
 
-.one {
-  animation-fill-mode: forwards;
-  opacity: 0;
-  animation-name: quoteIn;
-  animation-delay: 0s;
-  animation-duration: 4s; }
 
-.two {
-  animation-fill-mode: forwards;
-  opacity: 0;
-  animation-name: quoteIn;
-  animation-delay: 0.5s;
-  animation-duration: 4s; }
+.paper {
+    background-image: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: center;
+    background-image: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    height: 190px;
+    width: 190px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transform: translate(25%, -50%);
+    z-index: 1;
+    box-shadow: 0px 4px 0px hsl(230, 56%, 40%);
+}
+@media screen and (max-width: 400px){
+    .paper {
+        transform: translate(-25%, -40%);
+        height: 60%;
+        width: 250%;
+    }
+}
 
-.three {
-  animation-fill-mode: forwards;
-  opacity: 0;
-  animation-name: quoteIn;
-  animation-delay: 1s;
-  animation-duration: 4s; }
+.paper::after {
+    content: "";
+    height: 75%;
+    width: 75%;
+    border-radius: 100px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    box-shadow: inset 3px 8px 10px rgba(0, 0, 0, 0.24);
+}
 
-.four {
-  animation-fill-mode: forwards;
-  opacity: 0;
-  animation-name: quoteIn;
-  animation-delay: 1.5s;
-  animation-duration: 4s; }
 
-.five {
-  animation-fill-mode: forwards;
-  opacity: 0;
-  animation-name: quoteIn;
-  animation-delay: 2s;
-  animation-duration: 4s; }
+.scissors {
 
-@keyframes logoIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: center;
+    background-image: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    height: 190px;
+    width: 190px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transform: translate(-25%, -50%);
+    z-index: 1;
+    box-shadow: 0px 4px 0px hsl(40, 97%, 36%);
 
-@keyframes logoSmallIn {
-  0% {
-    opacity: 0; }
-  60% {
-    opacity: 0; }
-  100% {
-    opacity: 1;
-    transform: translateX(0rem); } }
+}
 
-@keyframes quoteIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+@media screen and (max-width: 400px){
+    .scissors {
+        transform: translate(20%, -40%);
+        height: 60%;
+        width: 250%;
+    }
+}
 
-.main {
-  height: 200px; }
+
+.scissors::after {
+    content: "";
+    height: 75%;
+    width: 75%;
+    border-radius: 100px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    box-shadow: inset 3px 8px 10px rgba(0, 0, 0, 0.24);
+}
+
+.rock {
+    background-image: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+    grid-column: 2/3;
+    grid-row: 2/2;
+    justify-self: center;
+    background-image: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    height: 190px;
+    width: 190px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transform: translateY(-65%);
+    z-index: 1;
+    box-shadow: 0px 4px 0px hsl(349, 84%, 33%);
+}
+
+@media screen and (max-width: 400px){
+    .rock {
+  
+        height: 60%;
+        width: 250%;
+    }
+}
+
+
+
+.rock::after {
+    content: "";
+    height: 75%;
+    width: 75%;
+    border-radius: 100px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    box-shadow: inset 3px 8px 10px rgba(0, 0, 0, 0.24);
+}
+
+
+footer {
+    transform: translateY(100px);
+
+    color: blanchedalmond;
+}
+
+a {
+    color: rgb(255, 255, 255)
+}
+
+
+.gameBox {
+    margin: 100px auto;
+
+    width: 600px;
+    height: 350px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    color: black;
+}
+
+@media screen and (max-width: 400px){
+    .gameBox{
+       width:100%;
+    }
+   
+}
+
+.playerResult {
+    background-color: hsl(230, 56%, 40%);
+    justify-self: center;
+    height: 190px;
+    width: 190px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transform: translateY(-65%);
+    z-index: 1;
+
+}
+
+@media screen and (max-width: 400px){
+    .playerResult{
+        transform: translate(20%,-65%);
+    }
+}
+
+.compResult {
+    background-color: hsl(230, 56%, 40%);
+    justify-self: center;
+    height: 190px;
+    width: 190px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transform: translateY(-65%);
+    z-index: 1;
+}
+
+@media screen and (max-width: 400px){
+    .compResult{
+        transform: translate(-20%,-65%);
+    }
+}
+
+
+.rockRes {
+    background-image: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+
+    justify-self: center;
+    background-image: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    height: 190px;
+    width: 190px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    z-index: 1;
+    box-shadow: 0px 4px 0px hsl(349, 84%, 33%);
+}
+
+@media screen and (max-width: 400px){
+    .rockRes{
+        height: 150px;
+        width: 150px;
+    }
+}
+
+
+.rockRes::after {
+    content: "";
+    height: 75%;
+    width: 75%;
+    border-radius: 100px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    box-shadow: inset 3px 8px 10px rgba(0, 0, 0, 0.24);
+}
+
+.paperRes {
+    background-image: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+
+
+    justify-self: center;
+    background-image: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    height: 190px;
+    width: 190px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    z-index: 1;
+    box-shadow: 0px 4px 0px hsl(230, 56%, 40%);
+}
+
+@media screen and (max-width: 400px){
+    .paperRes{
+        height: 150px;
+        width: 150px;
+    }
+}
+
+.paperRes::after {
+    content: "";
+    height: 75%;
+    width: 75%;
+    border-radius: 100px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    box-shadow: inset 3px 8px 10px rgba(0, 0, 0, 0.24);
+}
+
+
+.scissorsRes {
+
+    justify-self: center;
+    background-image: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    height: 190px;
+    width: 190px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    z-index: 1;
+    box-shadow: 0px 4px 0px hsl(40, 97%, 36%);
+
+}
+
+@media screen and (max-width: 400px){
+    .scissorsRes{
+        height: 150px;
+        width: 150px;
+    }
+}
+
+
+.scissorsRes::after {
+    content: "";
+    height: 75%;
+    width: 75%;
+    border-radius: 100px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    box-shadow: inset 3px 8px 10px rgba(0, 0, 0, 0.24);
+}
+
+.winner {
+    color: cornsilk;
+    font-size: 2rem;
+    font-weight: 900;
+    transform: translateY(-25%);
+}
+
+@media screen and (max-width: 400px){
+    .winner {
+        transform: translateY(45%);
+    }
+}
+
+
+.playAgain {
+    height: 2rem;
+    background-color: hsl(214, 47%, 23%);
+    border: 1px solid white;
+    border-radius: 5px;
+
+    transform: translate(100%, -400%);
+    padding: 0 1rem;
+    color: cornsilk;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 400px){
+    .playAgain {
+        transform: translate(75%, -550%);
+        width: 100%;
+        padding: 1rem;
+        height: 4rem;
+    }
+}
