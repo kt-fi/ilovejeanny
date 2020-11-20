@@ -19,7 +19,7 @@ body {
     @media (max-width: 600px) {
       .scroller__container {
         grid-template-columns: repeat(7, 50%); } }
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       .scroller__container {
         grid-template-columns: repeat(7, 100%); } }
   .scroller__object {
