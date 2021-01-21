@@ -1,99 +1,40 @@
-let bodyWidth;
-let gridWidth;
-let gridCount;
-let toScroll;
-let maxWidth;
-let firstScroll = true;
+const express = require("express");
+const webpush = require("web-push");
+const bodyParser = require("body-parser");
+const path = require("path");
 
+const app = express();
 
-const chooseWidth = () =>{
-      bodyWidth = $('body').width()
-    
-    if(bodyWidth > 800){
-        gridCount = 4;
-        gridWidth = bodyWidth/gridCount;
-        toScroll = bodyWidth/gridCount;
-    }else if(bodyWidth <800 && bodyWidth>600){ 
-        gridCount = 3;
-        gridWidth = bodyWidth/gridCount;
-        toScroll = bodyWidth/gridCount;
-    }else if(bodyWidth<600 && bodyWidth>400){
-        gridCount = 2;
-        gridWidth = bodyWidth/gridCount;
-        toScroll = bodyWidth/gridCount;
-    }else{
-        gridCount = 1;
-        gridWidth = bodyWidth;
-        toScroll = bodyWidth
-    }
-}
+// Set static path
+app.use(express.static(path.join(__dirname, "client")));
 
+app.use(bodyParser.json());
 
+const publicVapidKey = "BLwh0a57OVckoVwFRsOYcQaJONXCTevPiRjfAeAyAgGDOlgnDXpCEPyfvueBXj718FRG-4AA2TcZgyKL4CdCoCo";
+const privateVapidKey = "-xgEJWO9QjQcV7ckM2kjgD0W4HKM2BFpVFpYA1jobeQ";
+webpush.setVapidDetails(
+  "mailto:test@test.com",
+  publicVapidKey,
+  privateVapidKey
+);
 
-// const createValues = (gridCount) => {
-//     gridWidth = bodyWidth/gridCount;
-//     toScroll = bodyWidth/gridCount;  
-//     gridCount = gridCount;
-// }
+// Subscribe Route
+app.post("/subscribe", (req, res) => {
+  // Get pushSubscription object
+  const subscription = req.body;
 
-// const chooseWidth = () =>{
-//   bodyWidth = $('body').width()
+  // Send 201 - resource created
+  res.status(201).json({});
 
-// if(bodyWidth > 800){
-   
-//    createValues(4)
-// }else if(bodyWidth <800 && bodyWidth>600){ 
+  // Create payload
+  const payload = JSON.stringify({ title: "Push Test" });
 
-//     createValues(3)
-// }else if(bodyWidth<600 && bodyWidth>400){
-  
-//     createValues(2)
-// }else{
-//     gridCount = 1;
-//     gridWidth = bodyWidth;
-//     toScroll = bodyWidth
-// }
-// }
+  // Pass object into sendNotification
+  webpush
+    .sendNotification(subscription, payload)
+    .catch(err => console.error(err));
+});
 
+const port = 3000;
 
-
-(()=>{
-  chooseWidth()  
-})()
-
-$(window).resize(()=>{
-   chooseWidth()
-})
-
-
-$('.left').click(()=>{ 
-   maxWidth = $('.scroller__container').width()/gridCount * (7 - gridCount);
-
-    if(gridWidth >= maxWidth){
-        gridWidth = gridCount;
-    }
-
-    if(firstScroll){
-        gridWidth = gridWidth;
-        firstScroll = false;
-    }else{
-        gridWidth += toScroll
-    }
-    $('.scroller').animate({scrollLeft: gridWidth}, 800)
-    
-})
-
-
-$('.right').click(()=>{
-
-    gridWidth -= toScroll
-
-    if(gridWidth < 0){
-        gridWidth = 0;
-    }
-
-    $('.scroller').animate({scrollLeft: gridWidth}, 800)
-    
-    console.log(gridWidth)
-    console.log($('.scroller__container').width()/gridCount * (7 - gridCount))
-})
+app.listen(port, () => console.log(`Server started on port ${port}`));
